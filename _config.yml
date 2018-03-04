@@ -1,6 +1,6 @@
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 
-name: Jason Gerbes
+title: Jason Gerbes
 description: Software Developer
 url: http://jasongerbes.com
 author: Jason Gerbes
