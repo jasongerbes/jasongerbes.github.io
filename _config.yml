@@ -1,0 +1,26 @@
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+name: Jason Gerbes
+description: Software Developer
+url: http://jasongerbes.com
+author: Jason Gerbes
+
+twitter:
+    username: jasongerbes
+    
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /img/profile_image.jpg
+
+social:
+    name: Jason Gerbes
+    links:
+        - https://twitter.com/jasongerbes
+        - https://www.facebook.com/j.gerbes
+        - https://www.linkedin.com/in/jason-gerbes
+        - https://github.com/jasongerbes
+
+gems:
+    - jekyll-seo-tag

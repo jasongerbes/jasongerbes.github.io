@@ -1,0 +1,26 @@
+{
+  "name": "jasongerbes.github.io",
+  "version": "0.0.0",
+  "description": "The online profile of Jason Gerbes",
+  "main": "gulpfile.js",
+  "author": "Jason Gerbes",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasongerbes/jasongerbes.github.io.git"
+  },
+  "keywords": [
+    "jason gerbes",
+    "jasongerbes"
+  ],
+  "bugs": {
+    "url": "https://github.com/jasongerbes/jasongerbes.github.io/issues"
+  },
+  "homepage": "https://github.com/jasongerbes/jasongerbes.github.io"
+}
