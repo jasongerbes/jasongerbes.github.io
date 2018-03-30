@@ -4,6 +4,7 @@ var sass        = require('gulp-sass');
 var prefix      = require('gulp-autoprefixer');
 var cp          = require('child_process');
 var jekyll      = process.platform === 'win32' ? 'jekyll.bat' : 'jekyll';
+var cleanCss    = require('gulp-clean-css');
 
 /**
  * Build the Jekyll Site
@@ -38,12 +39,12 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
 gulp.task('sass', function () {
     return gulp.src('css/style.scss')
         .pipe(sass({
-            includePaths: ['css'],
-            onError: browserSync.notify
-        }))
+            includePaths: ['css']
+        }).on('error', sass.logError))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('_site/css'))
         .pipe(browserSync.reload({stream:true}))
+        .pipe(cleanCss())
         .pipe(gulp.dest('css'));
 });
 
@@ -52,8 +53,9 @@ gulp.task('sass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('css/*', ['sass']);
-    gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_config.yml'], ['jekyll-rebuild']);
+    gulp.watch('css/**', ['sass']);
+    gulp.watch(['*.html', '_layouts/*.html', '_includes/*.html', '_sections/*.html', '_experiences/*.html', '_projects/*.html', '_config.yml'], ['jekyll-rebuild']);
+    gulp.watch('js/*', ['jekyll-rebuild']);
 });
 
 /**

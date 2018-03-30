@@ -1,0 +1,31 @@
+.section {
+    padding: 50px 25px 70px;
+    position: relative;
+
+    &__heading {
+        text-align: center;
+        margin-bottom: 1.5em;
+    }
+
+    &__content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    &__overlay {
+        background-color: rgba($grey-dark, 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 30ms ease-in;
+        pointer-events: none;
+    }
+
+    @include tablet {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}

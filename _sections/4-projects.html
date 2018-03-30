@@ -1,0 +1,15 @@
+---
+heading: "How I spend my spare time"
+---
+{% for project in site.projects reversed %}
+<div class="project {% cycle 'project--image-right', 'project--image-left' %}">
+    <div class="project__details">
+        <h3>{{ project.heading }}</h3>
+        {{ project.content }}
+    </div>
+    <img class="project__image {{ project.image_class }}"
+         src="{{ project.image_url }}"
+         title="{{ project.image_title }}"
+         alt="{{ project.image_title }}">
+</div>
+{% endfor %}

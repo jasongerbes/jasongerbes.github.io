@@ -1,6 +1,16 @@
 ---
 layout: default
+title: Jason Gerbes
+description: Software Developer working in Auckland, New Zealand.
 ---
-
-<h1>Hello world, from Jason Gerbes</h1>
-<p>This website is under development. In the meantime, please check out my <a href="https://www.linkedin.com/in/jason-gerbes/">LinkedIn profile</a>.</p>
+{% for section in site.sections %}
+<section class="section {{ section.class }}">
+    {% if section.heading != null %}
+    <h2 class="section__heading">{{ section.heading }}</h2>
+    {% endif %}
+    <div class="section__content">
+        {{ section.content }}
+    </div>
+    <div class="section__overlay"></div>
+</section>
+{% endfor %}

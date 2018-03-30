@@ -1,0 +1,17 @@
+---
+heading: "My journey (so far)"
+---
+<ul class="experience-list">
+    {% for experience in site.experiences reversed %}
+    <li class="experience-list-item">
+        <div class="experience-list-item__primary-details">
+            <span class="experience-list-item__date-range">{{ experience.date_range }}</span>
+            <h3 class="experience-list-item__company-name">{{ experience.company_name }}</h3>
+            <span class="experience-list-item__role">{{ experience.role }}</span>
+        </div>
+        <div class="experience-list-item__secondary-details">
+            <p class="experience-list-item__blurb">{{ experience.blurb }}</p>
+        </div>
+    </li>
+    {% endfor %}
+</ul>

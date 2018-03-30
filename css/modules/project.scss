@@ -1,0 +1,53 @@
+.project {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:last-child) {
+        margin-bottom: 2.5em;
+    }
+
+    &__details {
+        margin-bottom: 2em;
+    }
+
+    &__image {
+        width: 100%;
+        height: auto;
+        box-shadow: $image-shadow;
+
+        &--small {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    }
+
+    @include tablet {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        &:not(:last-child) {
+            margin-bottom: 4.5em;
+        }
+
+        &__details {
+            margin-bottom: 0;
+        }
+
+        &__image {
+            flex-shrink: 1;
+            width: 50%;
+        }
+
+        &--image-left > &__image,
+        &--image-right > &__details {
+            margin-right: 2.5em;
+            order: 0;
+        }
+
+        &--image-left > &__details,
+        &--image-right > &__image  {
+            order: 1;
+        }
+    }
+}

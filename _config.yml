@@ -7,7 +7,7 @@ author: Jason Gerbes
 
 twitter:
     username: jasongerbes
-    
+
 defaults:
   - scope:
       path: ""
@@ -22,5 +22,10 @@ social:
         - https://www.linkedin.com/in/jason-gerbes
         - https://github.com/jasongerbes
 
-gems:
+collections:
+    - sections
+    - experiences
+    - projects
+
+plugins:
     - jekyll-seo-tag

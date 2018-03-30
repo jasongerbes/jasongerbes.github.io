@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700|Roboto:300,400');
+
+body {
+    color: $black;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: $font-family-body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-family-headings;
+    font-weight: 600;
+    color: $grey-dark;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h1 {
+    font-size: 3em;
+
+    @include tablet {
+        font-size: 3.5em;
+    }
+}
+
+h2 {
+    font-size: 1.75em;
+
+    @include tablet {
+        font-size: 2em;
+    }
+}
+
+h3 {
+    font-size: 1.2em;
+
+    @include tablet {
+        font-size: 1.3em;
+    }
+}
+
+h4 {
+    font-size: 1em;
+
+    @include tablet {
+        font-size: 1.1em;
+    }
+}
+
+p:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
