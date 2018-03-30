@@ -1,7 +1,9 @@
 @include tablet {
-    .section--hero {
-        padding-top: 120px;
-        padding-bottom: 80px;
+    @media screen and (min-height: 400px) {
+        .section--hero {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
     }
 }
 

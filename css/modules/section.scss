@@ -1,5 +1,10 @@
+$section-side-padding-mobile: 25px;
+$section-side-padding-tablet: 50px;
+
 .section {
-    padding: 50px 25px 70px;
+    padding: 50px $section-side-padding-mobile 70px;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
     position: relative;
 
     &__heading {
@@ -25,7 +30,22 @@
     }
 
     @include tablet {
-        padding-left: 50px;
-        padding-right: 50px;
+        padding-left: $section-side-padding-tablet;
+        padding-right: $section-side-padding-tablet;
+    }
+}
+
+// m#{a}x() is a hacky workaround untill sass supports navive min() and max()
+@supports(padding: m#{a}x(0px)) {
+    .section {
+        padding-left: m#{a}x($section-side-padding-mobile, env(safe-area-inset-left));
+        padding-right: m#{a}x($section-side-padding-mobile, env(safe-area-inset-right));
+    }
+
+    @include tablet {
+        .section {
+            padding-left: m#{a}x($section-side-padding-tablet, env(safe-area-inset-left));
+            padding-right: m#{a}x($section-side-padding-tablet, env(safe-area-inset-right));
+        }
     }
 }
